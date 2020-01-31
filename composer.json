@@ -1,0 +1,44 @@
+{
+    "name": "lvdhoorn/laravel-rackspace",
+    "description": "Rackspace for Laravel 5.8/6.0",
+    "keywords": ["rackspace", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "^5.8|^6.0",
+        "guzzlehttp/guzzle": "6.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^7.5|^8.3",
+        "orchestra/testbench": "^3.8|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Invato\\Rackspace\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Invato\\Rackspace\\tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Invato\\Rackspace\\ServiceProvider"
+            ],
+            "aliases": {
+                "Rackspace": "Invato\\Rackspace\\Facade"
+            }
+        }
+    }
+}
