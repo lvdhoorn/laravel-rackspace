@@ -9,6 +9,8 @@ class Client
     /** @var array */
     protected $classes = [
         'customers' => 'Customers',
+        'domains' => 'Domains',
+        'mailboxes' => 'Mailboxes',
     ];
 
     /** @var \Invato\Rackspace\HttpClient */
