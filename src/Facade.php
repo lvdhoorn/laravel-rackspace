@@ -3,7 +3,8 @@
 namespace Invato\Rackspace;
 
 /**
- * @method static \Invato\Rackspace\Api\Debtors debtors()
+ * Class Facade
+ * @package Invato\Rackspace
  */
 class Facade extends \Illuminate\Support\Facades\Facade
 {

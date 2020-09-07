@@ -5,22 +5,53 @@ namespace Invato\Rackspace\Api;
 class Mailboxes extends AbstractApi
 {
     /**
-     * @see https://www.Rackspace.nl/developer/api/crediteuren/add
-     * @param $params
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Mailbox_(Rest_API)#Index
+     *
+     * @param $customerId
+     * @param $domainName
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function list($customerId, $domainName, $params = [])
+    public function list($customerId, $domainName)
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes', $params);
+        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes');
     }
 
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Mailbox_(Rest_API)#Show
+     *
+     * @param $customerId
+     * @param $domainName
+     * @param $mailboxName
+     * @return mixed
+     */
     public function show($customerId, $domainName, $mailboxName)
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, []);
+        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
     }
 
-    public function add($params = []){
-        return $this->post('mailboxes', $params);
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Mailbox_(Rest_API)#Add.2FEdit
+     *
+     * @param $customerId
+     * @param $domainName
+     * @param $mailboxName
+     * @param array $params
+     * @return mixed
+     */
+    public function add($customerId, $domainName, $mailboxName, array $params){
+        return $this->post('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
+    }
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Mailbox_(Rest_API)#Add.2FEdit
+     *
+     * @param $customerId
+     * @param $domainName
+     * @param $mailboxName
+     * @param array $params
+     * @return mixed
+     */
+    public function edit($customerId, $domainName, $mailboxName, array $params){
+        return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
     }
 }

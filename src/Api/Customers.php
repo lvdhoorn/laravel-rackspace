@@ -5,17 +5,44 @@ namespace Invato\Rackspace\Api;
 class Customers extends AbstractApi
 {
     /**
-     * @see https://www.Rackspace.nl/developer/api/crediteuren/add
-     * @param $params
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Index_.28Reseller_Only.29
+     *
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function list($params = [])
+    public function list()
     {
-        return $this->get('customers', $params);
+        return $this->get('customers');
     }
 
-    public function add($params = []){
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Show_.28Reseller_Only.29
+     *
+     * @param $customerId
+     * @return mixed
+     */
+    public function show($customerId) {
+        return $this->get('customers/' . $customerId);
+
+    }
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Add.2FEdit_.28Reseller_Only.29
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function add(array $params){
         return $this->post('customers', $params);
+    }
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Add.2FEdit_.28Reseller_Only.29
+     *
+     * @param $customerId
+     * @param array $params
+     * @return mixed
+     */
+    public function edit($customerId, array $params){
+        return $this->put('customers/' . $customerId, $params);
     }
 }

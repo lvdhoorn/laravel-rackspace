@@ -12,7 +12,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/Rackspace.php' => config_path('Rackspace.php')
+            __DIR__ . '/../config/rackspace.php' => config_path('rackspace.php')
         ], 'config');
 
         \Auth::provider('Rackspace', function ($app, array $config) {
