@@ -45,14 +45,14 @@ class Aliases extends AbstractApi
     }
 
     /**
-     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Add.2FEdit_.28Reseller_Only.29
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Alias(Rest_API)#Delete
      *
      * @param $customerId
      * @param $domainName
-     * @param array $params
+     * @param $alias
      * @return mixed
      */
-    public function delete($customerId, $domainName, $params = []){
-        return $this->delete('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
+    public function delete($customerId, $domainName, $alias){
+        return $this->del('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias);
     }
 }

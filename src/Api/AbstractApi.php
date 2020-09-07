@@ -53,7 +53,7 @@ abstract class AbstractApi implements ApiInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function delete($action, $parameters)
+    protected function del($action, $parameters = [])
     {
         return $this->client->getHttpClient()->request('DELETE', $action, $parameters);
     }

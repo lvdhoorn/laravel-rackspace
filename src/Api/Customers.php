@@ -45,4 +45,14 @@ class Customers extends AbstractApi
     public function edit($customerId, array $params){
         return $this->put('customers/' . $customerId, $params);
     }
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Delete_.28Reseller_Only.29
+     *
+     * @param $customerId
+     * @return mixed
+     */
+    public function delete($customerId){
+        return $this->del('customers/' . $customerId);
+    }
 }

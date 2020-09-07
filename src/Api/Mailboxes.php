@@ -54,4 +54,16 @@ class Mailboxes extends AbstractApi
     public function edit($customerId, $domainName, $mailboxName, array $params){
         return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
     }
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Mailbox_(Rest_API)#Delete
+     *
+     * @param $customerId
+     * @param $domainName
+     * @param $mailboxName
+     * @return mixed
+     */
+    public function delete($customerId, $domainName, $mailboxName){
+        return $this->del('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
+    }
 }
