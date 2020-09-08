@@ -48,7 +48,7 @@ class Rackspace
      */
     public function getDefaultConnection()
     {
-        return $this->app['config']['Rackspace.default'];
+        return $this->app['config']['rackspace.default'];
     }
 
     /**
@@ -84,6 +84,6 @@ class Rackspace
      */
     protected function getConfig($name)
     {
-        return $this->app['config']["Rackspace.connections.{$name}"];
+        return $this->app['config']["rackspace.connections.{$name}"];
     }
 }

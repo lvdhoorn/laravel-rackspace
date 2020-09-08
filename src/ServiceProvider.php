@@ -38,10 +38,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         $this->app->singleton('Invato\Rackspace\Rackspace', function ($app) {
-            $Rackspace = new Rackspace($app);
-            $Rackspace->connection($Rackspace->getDefaultConnection());
+            $rackspace = new Rackspace($app);
+            $rackspace->connection($rackspace->getDefaultConnection());
 
-            return $Rackspace;
+            return $rackspace;
         });
 
         $this->app->alias('Invato\Rackspace\Rackspace', 'Rackspace');
