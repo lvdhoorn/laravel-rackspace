@@ -50,6 +50,18 @@ class Domains extends AbstractApi
         return $this->put('customers/' . $customerId . '/domains/' . $domainName, $params);
     }
 
+
+    /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Domain_(Rest_API)#Move_.28Reseller_Only.29
+     *
+     * @param $customerId
+     * @param $domainName
+     * @return mixed
+     */
+    public function move($customerId, $domainName){
+        return $this->put('customers/' . $customerId . '/domains/' . $domainName, ['moveDomain' => 'true']);
+    }
+
     /**
      * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Domain_(Rest_API)#Delete_.28Reseller_Only.29
      *
