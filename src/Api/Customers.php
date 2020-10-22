@@ -7,11 +7,12 @@ class Customers extends AbstractApi
     /**
      * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Customer_(Rest_API)#Index_.28Reseller_Only.29
      *
+     * @param  array  $params
      * @return mixed
      */
-    public function list()
+    public function list(array $params = [])
     {
-        return $this->get('customers');
+        return $this->get('customers', $params);
     }
 
     /**
