@@ -22,13 +22,11 @@ class Aliases extends AbstractApi
      *
      * @param $customerId
      * @param $domainName
-     * @param $mailboxName
      * @param $alias
      * @return mixed
      */
-    public function show($customerId, $domainName, $mailboxName, $alias) {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName . '/alias/', $alias);
-
+    public function show($customerId, $domainName, $alias) {
+        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/'. $alias);
     }
 
     /**
