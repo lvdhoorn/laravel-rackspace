@@ -45,6 +45,20 @@ class Aliases extends AbstractApi
     }
 
     /**
+     * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Alias(Rest_API)#Bulk_Modify_Alias_List
+     *
+     * @param $customerId
+     * @param $domainName
+     * @param $alias
+     * @param array $params
+     * @return mixed
+     */
+    public function bulkModigy($customerId, $domainName, $alias, array $params){
+        return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
+    }
+
+
+    /**
      * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Rackspace_Alias(Rest_API)#Delete
      *
      * @param $customerId
