@@ -53,7 +53,7 @@ class Aliases extends AbstractApi
      * @param array $params
      * @return mixed
      */
-    public function bulkModigy($customerId, $domainName, $alias, array $params){
+    public function bulkModify($customerId, $domainName, $alias, array $params){
         return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
     }
 
