@@ -8,11 +8,12 @@ class Domains extends AbstractApi
      * http://api-wiki.apps.rackspace.com/api-wiki/index.php?title=Domain_(Rest_API)#Index
      *
      * @param $customerId
+     * @param $params
      * @return mixed
      */
-    public function list($customerId)
+    public function list($customerId, $params = [])
     {
-        return $this->get('customers/' . $customerId . '/domains');
+        return $this->get('customers/' . $customerId . '/domains', $params);
     }
 
     /**

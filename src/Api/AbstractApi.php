@@ -23,7 +23,7 @@ abstract class AbstractApi implements ApiInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function get($action, $parameters = [])
+    protected function get($action, $parameters = ['size' => 250])
     {
         return $this->client->getHttpClient()->request('GET', $action, $parameters);
     }

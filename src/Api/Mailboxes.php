@@ -9,11 +9,12 @@ class Mailboxes extends AbstractApi
      *
      * @param $customerId
      * @param $domainName
+     * @param  array  $params
      * @return mixed
      */
-    public function list($customerId, $domainName)
+    public function list($customerId, $domainName, $params = [])
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes');
+        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes', $params);
     }
 
     /**
