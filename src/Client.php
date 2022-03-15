@@ -11,6 +11,7 @@ class Client
         'customers' => 'Customers',
         'domains' => 'Domains',
         'mailboxes' => 'Mailboxes',
+        'exchangeMailboxes' => 'ExchangeMailboxes',
         'aliases' => 'Aliases',
     ];
 
