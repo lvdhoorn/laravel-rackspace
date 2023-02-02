@@ -20,7 +20,6 @@ class DKIM extends AbstractApi
      *
      * @param $customerId
      * @param $domainName
-     * @param array $params
      * @return mixed
      */
     public function enableOrRotateKeys($customerId, $domainName){
@@ -32,11 +31,10 @@ class DKIM extends AbstractApi
      *
      * @param $customerId
      * @param $domainName
-     * @param array $params
      * @return mixed
      */
     public function disable($customerId, $domainName){
-        return $this->del('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim/verification');
+        return $this->del('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim', []);
     }
 
 
@@ -48,6 +46,6 @@ class DKIM extends AbstractApi
      * @return mixed
      */
     public function verify($customerId, $domainName){
-        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim');
+        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim/verification');
     }
 }
