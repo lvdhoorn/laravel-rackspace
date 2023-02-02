@@ -46,6 +46,6 @@ class DKIM extends AbstractApi
      * @return mixed
      */
     public function verify($customerId, $domainName){
-        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim/verification');
+        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim/verification', []);
     }
 }
