@@ -14,7 +14,7 @@ class Mailboxes extends AbstractApi
      */
     public function list($customerId, $domainName, $params = [])
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes', $params);
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes', $params);
     }
 
     /**
@@ -27,7 +27,7 @@ class Mailboxes extends AbstractApi
      */
     public function show($customerId, $domainName, $mailboxName)
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
     }
 
     /**
@@ -40,7 +40,7 @@ class Mailboxes extends AbstractApi
      * @return mixed
      */
     public function add($customerId, $domainName, $mailboxName, array $params){
-        return $this->post('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
+        return $this->post('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
     }
 
     /**
@@ -53,7 +53,7 @@ class Mailboxes extends AbstractApi
      * @return mixed
      */
     public function edit($customerId, $domainName, $mailboxName, array $params){
-        return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
+        return $this->put('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName, $params);
     }
 
     /**
@@ -65,6 +65,6 @@ class Mailboxes extends AbstractApi
      * @return mixed
      */
     public function delete($customerId, $domainName, $mailboxName){
-        return $this->del('customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
+        return $this->del('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/mailboxes/' . $mailboxName);
     }
 }

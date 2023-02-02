@@ -12,7 +12,7 @@ class Customers extends AbstractApi
      */
     public function list(array $params = [])
     {
-        return $this->get('customers', $params);
+        return $this->get('v1/customers', $params);
     }
 
     /**
@@ -22,7 +22,7 @@ class Customers extends AbstractApi
      * @return mixed
      */
     public function show($customerId) {
-        return $this->get('customers/' . $customerId);
+        return $this->get('v1/customers/' . $customerId);
 
     }
 
@@ -33,7 +33,7 @@ class Customers extends AbstractApi
      * @return mixed
      */
     public function add(array $params){
-        return $this->post('customers', $params);
+        return $this->post('v1/customers', $params);
     }
 
     /**
@@ -44,7 +44,7 @@ class Customers extends AbstractApi
      * @return mixed
      */
     public function edit($customerId, array $params){
-        return $this->put('customers/' . $customerId, $params);
+        return $this->put('v1/customers/' . $customerId, $params);
     }
 
     /**
@@ -54,6 +54,6 @@ class Customers extends AbstractApi
      * @return mixed
      */
     public function delete($customerId){
-        return $this->del('customers/' . $customerId);
+        return $this->del('v1/customers/' . $customerId);
     }
 }

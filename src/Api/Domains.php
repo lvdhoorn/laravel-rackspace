@@ -13,7 +13,7 @@ class Domains extends AbstractApi
      */
     public function list($customerId, $params = [])
     {
-        return $this->get('customers/' . $customerId . '/domains', $params);
+        return $this->get('v1/customers/' . $customerId . '/domains', $params);
     }
 
     /**
@@ -24,7 +24,7 @@ class Domains extends AbstractApi
      * @return mixed
      */
     public function show($customerId, $domainName) {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName);
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName);
     }
 
     /**
@@ -36,7 +36,7 @@ class Domains extends AbstractApi
      * @return mixed
      */
     public function add($customerId, $domainName, array $params){
-        return $this->post('customers/' . $customerId . '/domains/' . $domainName, $params);
+        return $this->post('v1/customers/' . $customerId . '/domains/' . $domainName, $params);
     }
 
     /**
@@ -48,7 +48,7 @@ class Domains extends AbstractApi
      * @return mixed
      */
     public function edit($customerId, $domainName, array $params){
-        return $this->put('customers/' . $customerId . '/domains/' . $domainName, $params);
+        return $this->put('v1/customers/' . $customerId . '/domains/' . $domainName, $params);
     }
 
 
@@ -60,7 +60,7 @@ class Domains extends AbstractApi
      * @return mixed
      */
     public function move($customerId, $domainName){
-        return $this->put('customers/' . $customerId . '/domains/' . $domainName, ['moveDomain' => 'true']);
+        return $this->put('v1/customers/' . $customerId . '/domains/' . $domainName, ['moveDomain' => 'true']);
     }
 
     /**
@@ -71,6 +71,6 @@ class Domains extends AbstractApi
      * @return mixed
      */
     public function delete($customerId, $domainName) {
-        return $this->del('customers/' . $customerId . '/domains/' . $domainName);
+        return $this->del('v1/customers/' . $customerId . '/domains/' . $domainName);
     }
 }

@@ -14,7 +14,7 @@ class Aliases extends AbstractApi
      */
     public function list($customerId, $domainName, $params = [])
     {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/', $params);
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/', $params);
     }
 
     /**
@@ -26,7 +26,7 @@ class Aliases extends AbstractApi
      * @return mixed
      */
     public function show($customerId, $domainName, $alias) {
-        return $this->get('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/'. $alias);
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/'. $alias);
     }
 
     /**
@@ -39,7 +39,7 @@ class Aliases extends AbstractApi
      * @return mixed
      */
     public function add($customerId, $domainName, $alias, array $params){
-        return $this->post('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
+        return $this->post('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
     }
 
     /**
@@ -52,7 +52,7 @@ class Aliases extends AbstractApi
      * @return mixed
      */
     public function bulkModify($customerId, $domainName, $alias, array $params){
-        return $this->put('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
+        return $this->put('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias, $params);
     }
 
 
@@ -65,6 +65,6 @@ class Aliases extends AbstractApi
      * @return mixed
      */
     public function delete($customerId, $domainName, $alias){
-        return $this->del('customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias);
+        return $this->del('v1/customers/' . $customerId . '/domains/' . $domainName . '/rs/aliases/' . $alias);
     }
 }
