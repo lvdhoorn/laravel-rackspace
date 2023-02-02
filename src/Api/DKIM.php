@@ -24,7 +24,7 @@ class DKIM extends AbstractApi
      * @return mixed
      */
     public function enableOrRotateKeys($customerId, $domainName){
-        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim');
+        return $this->post('v2/customers/' . $customerId . '/domains/' . $domainName . '/dkim', []);
     }
 
     /**
