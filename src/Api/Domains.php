@@ -73,4 +73,18 @@ class Domains extends AbstractApi
     public function delete($customerId, $domainName) {
         return $this->del('v1/customers/' . $customerId . '/domains/' . $domainName);
     }
+    
+        public function getAlternativeDomain($customerId, $domainName) {
+        return $this->get('v1/customers/' . $customerId . '/domains/' . $domainName . '/alternatedomains');
+    }
+
+
+    public function addAlternativeDomain($customerId, $domainName, $alternativeDomain, $params = ['type' => 'AcceptedDomain', 'createForExistingRecipients' => 'true']) {
+        return $this->post('v1/customers/' . $customerId . '/domains/' . $domainName . '/alternatedomains/' . $alternativeDomain, $params);
+    }
+
+
+    public function deleteAlternativeDomain($customerId, $domainName, $alternativeDomain) {
+        return $this->del('v1/customers/' . $customerId . '/domains/' . $domainName . '/alternatedomains/' . $alternativeDomain);
+    }
 }
